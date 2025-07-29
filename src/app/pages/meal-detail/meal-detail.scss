@@ -1,0 +1,73 @@
+.detail-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  color: #000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  .title-detail {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #c95c5c;
+  }
+
+  .img-detail {
+    display: block;
+    margin: 0 auto 2rem;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(201, 92, 92, 0.3);
+  }
+
+  .subtitle-detail {
+    font-weight: 500;
+    margin: 0.75rem 0 0.25rem;
+    color: #000;
+
+    strong {
+      color: #c95c5c;
+    }
+  }
+
+  .list-detail {
+    list-style: none;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.5rem 1rem;
+
+    .element-detail {
+      background: #c95c5c;
+      color: #fff;
+      padding: 0.4rem 0.6rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #a34747;
+      }
+    }
+  }
+    .btn-home {
+      margin: 1rem auto 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #c95c5c;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #a34747;
+      }
+    }
+}
