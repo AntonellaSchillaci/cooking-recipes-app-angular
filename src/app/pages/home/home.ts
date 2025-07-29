@@ -4,6 +4,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { MealService } from '../../core/services/meal';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FavoritesService } from '../../core/services/favorites.service';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private mealService: MealService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    public favoritesService: FavoritesService
   ) {}
 
   ngOnInit(): void {
@@ -41,5 +43,4 @@ export class HomeComponent implements OnInit {
         console.log('Ricette filtrate:', this.filteredMeals.length);
       });
   }
-
 }

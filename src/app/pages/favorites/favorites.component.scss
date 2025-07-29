@@ -4,22 +4,27 @@
   margin-top: 1.5rem;
   color: #c95c5c;
 }
-
-.input-search {
-  display: block;
-  margin: 1.5rem auto;
-  padding: 0.75rem 1rem;
-  width: 80%;
-  max-width: 400px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
+.btn-home {
+  margin: 1rem 2rem 2rem;
+  padding: 0.5rem 1rem;
+  background-color: #c95c5c;
+  border: none;
   border-radius: 8px;
-  outline: none;
-  transition: border-color 0.2s ease;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 
-  &:focus {
-    border-color: #c95c5c;
+  &:hover {
+    background-color: #a34747;
   }
+}
+.empty-message {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  color: #666;
 }
 
 .list {
@@ -32,11 +37,10 @@
 
 .list-element {
   background: #c95c5c;
-  border: 1px solid #eee;
   border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
     transform: scale(1.03);
@@ -45,16 +49,16 @@
 }
 
 .link-element {
-  display: block;
   text-decoration: none;
   color: inherit;
+  display: block;
 }
 
 .img-list {
   width: 100%;
   height: 160px;
   object-fit: cover;
-  border-bottom: 1px solid #c95c5c;
+  border-bottom: 1px solid #fff;
 }
 
 .name-meal {
@@ -62,33 +66,23 @@
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
-  color:  #fff;
+  color: #fff;
 }
 
-.favorites-link {
-  display: block;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #c95c5c;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.fav-button {
-  background: none;
-  border: none;
-  cursor: pointer;
+.remove-button {
   display: block;
   margin: 0.5rem auto 1rem;
-  font-size: 2rem;
-  color: #eee;
-  transition: transform 0.2s ease;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: #c95c5c;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 
   &:hover {
-    transform: scale(1.2);
+    background-color: #f2f2f2;
   }
 
-  .filled {
-    color: #ff4d4d;
-  }
 }

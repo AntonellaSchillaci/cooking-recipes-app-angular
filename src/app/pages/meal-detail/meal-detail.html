@@ -10,6 +10,10 @@
       {{ ingredient }}
     </li>
   </ul>
+  <button (click)="toggleFavorite()" class="fav-button">
+    {{ isFav() ? '💔 Rimuovi dai preferiti' : '❤️ Aggiungi ai preferiti' }}
+  </button>
+
 
   <p class="subtitle-detail"><strong>Istruzioni:</strong> {{ meal.strInstructions }}</p>
 </div>

@@ -1,0 +1,15 @@
+<h1 class="title">I tuoi piatti preferiti 🍽️</h1>
+ <button class="btn-home" (click)="goHome()">🔙 Torna alla Home 🏠</button>
+
+<ul class="list">
+  <li class="list-element" *ngFor="let meal of favService.favorites()">
+    <a [routerLink]="['/meal', meal.idMeal]" class="link-element">
+      <img [src]="meal.strMealThumb" class="img-list" alt="image meal"/>
+      <p class="name-meal">{{ meal.strMeal }}</p>
+    </a>
+  </li>
+</ul>
+
+<p *ngIf="favService.favorites().length === 0" class="subtitle-detail">
+  Nessun piatto salvato tra i preferiti!
+</p>

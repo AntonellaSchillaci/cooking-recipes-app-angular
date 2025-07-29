@@ -1,12 +1,30 @@
 <h1 class="title">Cooking Recipe</h1>
+<a routerLink="/favorites" class="favorites-link">Vai ai preferiti ❤️</a>
+
 
 <input id="searchInput" class="input-search" [formControl]="searchControl" placeholder="Cerca ricette..." />
 
 <ul class="list">
   <li *ngFor="let meal of filteredMeals" class="list-element">
     <a [routerLink]="['/meal', meal.idMeal]" class="link-element">
-      <img [src]="meal.strMealThumb" alt="Image meal" class="img-list"/>
+      <img [src]="meal.strMealThumb" alt="Image meal" class="img-list" />
       <div class="name-meal">{{ meal.strMeal }}</div>
     </a>
+    <button
+      class="fav-button"
+      (click)="
+        favoritesService.isFavorite(meal.idMeal)
+          ? favoritesService.remove(meal.idMeal)
+          : favoritesService.add(meal);
+        $event.stopPropagation()
+      "
+      [attr.aria-label]="
+        favoritesService.isFavorite(meal.idMeal)
+          ? 'Rimuovi dai preferiti'
+          : 'Aggiungi ai preferiti'
+      "
+    >
+      <span [class.filled]="favoritesService.isFavorite(meal.idMeal)">♥</span>
+    </button>
   </li>
 </ul>
