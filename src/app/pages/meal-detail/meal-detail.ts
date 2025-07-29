@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MealService } from '../../core/services/meal';
 import { RouterModule } from '@angular/router';
+import { FavoritesService } from '../../core/services/favorites.service';
 
 @Component({
   selector: 'app-meal-detail',
@@ -17,7 +18,8 @@ export class MealDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private mealService: MealService,
-    private router: Router
+    private router: Router,
+    private favoritesService: FavoritesService
   ) {}
 
   ngOnInit() {
@@ -42,5 +44,16 @@ export class MealDetailComponent implements OnInit {
 
   goHome() {
     this.router.navigateByUrl('');
+  }
+
+  toggleFavorite() {
+    if (this.meal) {
+      this.favoritesService.isFavorite(this.meal.idMeal)
+        ? this.favoritesService.remove(this.meal.idMeal)
+        : this.favoritesService.add(this.meal);
+    }
+  }
+  isFav(): boolean {
+    return this.meal ? this.favoritesService.isFavorite(this.meal.idMeal) : false;
   }
 }
