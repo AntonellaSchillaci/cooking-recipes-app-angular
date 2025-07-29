@@ -1,1 +1,15 @@
-<p>meal-detail works!</p>
+<div *ngIf="meal" class="detail-container">
+  <button class="btn-home" (click)="goHome()">🔙 Torna alla Home 🏠</button>
+  <h1 class="title-detail">{{ meal.strMeal }}</h1>
+  <img [src]="meal.strMealThumb" alt="image of meal" class="img-detail"/>
+  <p class="subtitle-detail"><strong>Categoria:</strong> {{ meal.strCategory }}</p>
+  <p class="subtitle-detail"><strong>Cucina:</strong> {{ meal.strArea }}</p>
+  <p class="subtitle-detail"><strong>Ingredienti:</strong></p>
+  <ul class="list-detail">
+    <li *ngFor="let ingredient of getIngredients(meal)" class="element-detail">
+      {{ ingredient }}
+    </li>
+  </ul>
+
+  <p class="subtitle-detail"><strong>Istruzioni:</strong> {{ meal.strInstructions }}</p>
+</div>

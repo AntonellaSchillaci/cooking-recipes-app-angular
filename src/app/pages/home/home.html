@@ -1,1 +1,12 @@
-<p>home works!</p>
+<h1 class="title">Cooking Recipe</h1>
+
+<input id="searchInput" class="input-search" [formControl]="searchControl" placeholder="Cerca ricette..." />
+
+<ul class="list">
+  <li *ngFor="let meal of filteredMeals" class="list-element">
+    <a [routerLink]="['/meal', meal.idMeal]" class="link-element">
+      <img [src]="meal.strMealThumb" alt="Image meal" class="img-list"/>
+      <div class="name-meal">{{ meal.strMeal }}</div>
+    </a>
+  </li>
+</ul>
